@@ -1,0 +1,22 @@
+<% layout("boilerplate.ejs") -%>
+<h1>Listing in Detail</h1>
+<div class="d-flex justify-content-center ">
+<div class="card showCard " >
+  <img src="<%=list.image%>" class="card-img-top" alt="..." style="height:20rem">
+  <div class="card-body">
+    <h5 class="card-title"><%=list.title%></h5>
+    <p class="card-text"><i>Description:<%=list.description%></i></p>
+    <p class="card-text"><i>Price:₹<%=list.price%>/night</i></p>
+    <p class="card-text"><i>Location:<%=list.location%></i></p>
+     <p class="card-text"><i>Country:<%=list.country%></i></p>
+     <div class="btnContainer">
+      <form method="get" action="http://localhost:8080/edit/<%=list.id%>">
+    <button class="btn btn-danger">Edit</button>
+    </form>
+    <form method="post" action="http://localhost:8080/delete/<%=list.id%>?_method=DELETE">
+    <button class="btn btn-danger">Delete</button>
+    </form>
+    </div>
+  </div>
+</div>
+</div>
