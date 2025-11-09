@@ -52,7 +52,6 @@ app.get("/show/:id",async (req,res)=>{
     res.render("show.ejs",{list});
    })
 
-    //create route
 app.get("/create",(req,res)=>{
     res.render("create.ejs");
 })
@@ -67,6 +66,7 @@ app.put("/create/newPost",(req,res)=>{
        location:location,
        country:country
     });
+    console.log(newListing);
     newListing.save();
  res.redirect("http://localhost:8080/listing");
 })
@@ -98,4 +98,8 @@ app.delete("/delete/:id",async (req,res)=>{
     await listing.findByIdAndDelete(id);
     res.redirect("http://localhost:8080/listing");
 
+})
+//contact route
+app.get("/contact",(req,res)=>{
+    res.render("contact.ejs")
 })

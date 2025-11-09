@@ -11,7 +11,6 @@ async function main() {
 const listingSchema=new mongoose.Schema({
     title:{
         type:String,
-        required:true
     },
     description:{
         type:String,
@@ -21,15 +20,12 @@ const listingSchema=new mongoose.Schema({
     },
     price:{
         type:Number,
-        required:true
     },
     location:{
         type:String,
-        required:true
     },
     country:{
         type:String,
-        required:true
     }
 });
 const listing=mongoose.model("listing",listingSchema);
